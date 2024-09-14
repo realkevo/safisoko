@@ -6,6 +6,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:safisoko/pages/profile_settings.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -435,7 +436,9 @@ class Profile extends StatelessWidget {
     );
   }
 
-  void _logoutUser() {}
+  void _logoutUser() {
+
+  }
 }
 
 _wishlist() {
@@ -443,6 +446,7 @@ _wishlist() {
 }
 //this function should open settings screen when its called
 //after settings iconButton above is clicked
-_settings() {
+void _settings() {
+  Navigator.push(context, MaterialPageRoute(builder: context)) 
   //todo in here call navigator to user profile settings page
 }
