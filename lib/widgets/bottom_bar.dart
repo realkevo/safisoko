@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:safisoko/pages/cart_ui.dart';
 import 'package:safisoko/pages/home_screen.dart';
-import 'package:safisoko/pages/profile.dart';
-import 'package:safisoko/utils/handlers/loginregisterhandler.dart';
+import 'package:safisoko/pages/profile_settings.dart';
 
 class BottomBar  extends StatefulWidget {
   @override
@@ -13,9 +12,10 @@ class BottomBar  extends StatefulWidget {
 class _BottomBarState extends State<BottomBar>{
   int _currentIndex = 0;
   final List<Widget> _pages= [
+    Center(
+      child: ProfileSettings(),
+    ),
     Center(child:  HomeScreen (),),
-    Center(child: Profile(),),
-
     Center(child:  Cart (),),
   ];
 

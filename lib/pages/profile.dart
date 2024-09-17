@@ -1,4 +1,4 @@
-import 'dart:ui';
+/*import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +97,7 @@ class Profile extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           //todo show logged in user here in this text widget
-                          const Center(
+                           Center(
                             child: Padding(
                               padding: EdgeInsets.only(
                                 top: 15.0,
@@ -121,7 +121,18 @@ class Profile extends StatelessWidget {
 
                                   //todo change this to
                                   IconButton(
-                                    onPressed: _settings,
+                                    onPressed: (){
+                                      ProfileSettings()
+
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                                          ProfileSettings()),
+                                      );
+                                   /*   _opensettings(context);*/
+
+                                    },
+
+
+
                                     icon: Icon(
                                       Icons.settings,
                                       size: 38,
@@ -439,6 +450,7 @@ class Profile extends StatelessWidget {
   void _logoutUser() {
 
   }
+
 }
 
 _wishlist() {
@@ -446,7 +458,11 @@ _wishlist() {
 }
 //this function should open settings screen when its called
 //after settings iconButton above is clicked
-void _settings() {
-  Navigator.push(context, MaterialPageRoute(builder: context)) 
+Drawer _settings(BuildContext context) {
+  return Drawer(
+    child: ProfileSettings(),
+  );
+
+
   //todo in here call navigator to user profile settings page
-}
+}*/
