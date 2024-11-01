@@ -3,7 +3,7 @@ import 'package:safisoko/main.dart';
 
 import '../../pages/login.dart';
 import '../../pages/register.dart';
-
+import 'package:safisoko/utils/models/userAuth.dart';
 
 class AuthScreen extends StatefulWidget{
   @override
@@ -13,8 +13,13 @@ class AuthScreen extends StatefulWidget{
 
   class _AuthScreenState extends State<AuthScreen> {
     bool isLogin = true;
+  late User userAuth;
 
-    @override
+  void loginUser() {
+    userAuth.login();
+  }
+
+  @override
     Widget build(BuildContext context) {
       return Center(
 

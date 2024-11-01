@@ -15,6 +15,9 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return
       Scaffold(
           appBar: AppBar(
@@ -22,7 +25,6 @@ class _CartState extends State<Cart> {
             shadowColor: Colors.cyan,
             bottomOpacity: 40.0,
             backgroundColor: Colors.white,
-
             toolbarHeight: 40,
             title: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -38,30 +40,27 @@ class _CartState extends State<Cart> {
                       fontWeight: FontWeight.bold,
                       fontSize: 20,),
                     border: InputBorder.none,
-
-
                   ),
                   style: TextStyle(color: Colors.black,),
                 ),
               ),
             ),
 
-
           ),
-          body:
-          Container(
-            decoration: const BoxDecoration(
+      body: Container(
+        decoration: const BoxDecoration(
               color: Colors.white,
-              shape: BoxShape.rectangle,
-
-            ),
-            child: Column(
+          shape: BoxShape.rectangle,
+        ),
+        child: Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 2.0),
                   child: Container(
-                    height: 500,
-                    decoration: const BoxDecoration(
+                //todo make this container height adaptable to screensize
+                height: screenHeight * 0.5,
+
+                decoration: const BoxDecoration(
 
                       borderRadius: BorderRadius.only(bottomRight: Radius.circular(
 
@@ -79,8 +78,6 @@ class _CartState extends State<Cart> {
                         {
                           return
                             CartProductTile();
-
-
                         }
                     ),
 
@@ -103,11 +100,9 @@ class _CartState extends State<Cart> {
                           shape: BoxShape.rectangle,
                         ),
 
-
                         child: Padding(
                           padding: const EdgeInsets.only(left: 15.0, right: 25.0,
                           ),
-
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -146,8 +141,9 @@ class _CartState extends State<Cart> {
                                     ),),
                                 ],
                               ),
-                              Container(height: 3,
-                                color: Colors.orange,),
+                          Container(
+                            height: 3,
+                            color: Colors.orange,),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -205,7 +201,7 @@ class _CartState extends State<Cart> {
 
           ),
 
-        //todo replace this SingleChildScrollVew wiht ListVIew builder
+      //todo replace this SingleChildScrollVew wiht ListVIew builder
 
 
       );
